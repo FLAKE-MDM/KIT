@@ -9,5 +9,11 @@
       margin: 1.5rem 0;
       font-weight: bold;
     }
+    .btn{
+      @include bp(md){
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+      }
+    }
   }
 }

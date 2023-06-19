@@ -146,28 +146,37 @@ body{
 .justify-content-center{
     justify-content: center;
 }
-.grid-2{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 3rem;
-}
-.grid-md-2{
-    @include bp(md-up){
+.grid{
+    &-2{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 3rem;
     }
-}
-.grid-lg-2{
-    @include bp(lg-up){
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 3rem;
+    &-md-2{
+        @include bp(md-up){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 3rem;
+        }
     }
-}
-.grid-xl-3{
-    @include bp(xl-up){
-        grid-template-columns: repeat(3, 1fr);
+    &-lg-2{
+        @include bp(lg-up){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 3rem;
+        }
+    }
+    &-lg-3{
+        @include bp(lg-up){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 3rem;
+        }
+    }
+   &-xl-3{
+        @include bp(xl-up){
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 }
 .me-1{
@@ -181,10 +190,14 @@ body{
     border-bottom: 1px solid #EDEDED;
     margin: 8rem 0 3.5rem;
     @include bp(md){
-      margin-top: 2.5rem;
+      margin: 2rem 0 3.1rem;
+      padding: 2rem 0;
     }
     &_md{
         margin-top: 7.1rem;
+        @include bp(md){
+            margin-top: 5.8rem;
+        }
     }
     &_lg{
         margin-top: 10.7rem;

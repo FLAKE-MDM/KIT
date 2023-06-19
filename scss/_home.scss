@@ -18,7 +18,7 @@
       align-items: flex-start;
       padding-right: 10%;
       .icon{
-        margin-top: 1rem;
+        margin-top: 0.4rem;
       }
     }
   }
@@ -185,12 +185,17 @@
 .products-home{
   padding: 1.6rem 0 12.61rem;
   @include bp(md){
-    padding-bottom: 6.7rem;
+    padding-bottom: 7.8rem;
+  }
+  .heading{
+    @include bp(md){
+      padding: 2.4rem 0;
+    }
   }
 }
 .services-section{
   @include bp(md){
-    margin-top: 6.1rem;
+    margin-top: 5.7rem;
   }
 }
 
@@ -223,7 +228,7 @@
     padding: 2rem 1.7rem;
     margin: -2.3rem -1.7rem 0;
     @include bp(md){
-      margin-top: -2.6rem;
+      margin-top: -2.1rem;
     }
     .swiper-slide{
       height: auto;
@@ -295,6 +300,9 @@
     border-radius: 20px;
     padding: 1.5rem 3rem;
     margin-bottom: 16rem;
+    @include bp(md){
+      margin-bottom: 12rem;
+    }
     &__title{
       @include bp(md){
         font-size: 1.6rem;

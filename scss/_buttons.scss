@@ -28,10 +28,6 @@
             color: #fff;
         }
     }
-    @include bp(md){
-        font-size: 1.6rem;
-        line-height: 2.1rem;
-    }
     &_outline{
         background: transparent;
         color: $danger;

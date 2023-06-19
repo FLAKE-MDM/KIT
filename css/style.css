@@ -713,12 +713,6 @@ a:hover > .icon-:after, .active > .icon-:after {
     color: #fff;
   }
 }
-@media only screen and (max-width: 991px) {
-  .btn {
-    font-size: 1.6rem;
-    line-height: 2.1rem;
-  }
-}
 .btn_outline {
   background: transparent;
   color: #A70A00;
@@ -1040,7 +1034,6 @@ body.overflow-none {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 3rem;
 }
-
 @media only screen and (min-width: 768px) {
   .grid-md-2 {
     display: grid;
@@ -1048,7 +1041,6 @@ body.overflow-none {
     grid-gap: 3rem;
   }
 }
-
 @media only screen and (min-width: 992px) {
   .grid-lg-2 {
     display: grid;
@@ -1056,7 +1048,13 @@ body.overflow-none {
     grid-gap: 3rem;
   }
 }
-
+@media only screen and (min-width: 992px) {
+  .grid-lg-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+  }
+}
 @media only screen and (min-width: 1200px) {
   .grid-xl-3 {
     grid-template-columns: repeat(3, 1fr);
@@ -1078,11 +1076,17 @@ body.overflow-none {
 }
 @media only screen and (max-width: 991px) {
   .heading {
-    margin-top: 2.5rem;
+    margin: 2rem 0 3.1rem;
+    padding: 2rem 0;
   }
 }
 .heading_md {
   margin-top: 7.1rem;
+}
+@media only screen and (max-width: 991px) {
+  .heading_md {
+    margin-top: 5.8rem;
+  }
 }
 .heading_lg {
   margin-top: 10.7rem;
@@ -1592,7 +1596,7 @@ body.overflow-none {
     padding-right: 10%;
   }
   .presentation__subtitle .icon {
-    margin-top: 1rem;
+    margin-top: 0.4rem;
   }
 }
 .presentation__container {
@@ -1784,13 +1788,18 @@ body.overflow-none {
 }
 @media only screen and (max-width: 991px) {
   .products-home {
-    padding-bottom: 6.7rem;
+    padding-bottom: 7.8rem;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .products-home .heading {
+    padding: 2.4rem 0;
   }
 }
 
 @media only screen and (max-width: 991px) {
   .services-section {
-    margin-top: 6.1rem;
+    margin-top: 5.7rem;
   }
 }
 
@@ -1830,7 +1839,7 @@ body.overflow-none {
 }
 @media only screen and (max-width: 991px) {
   .customer-slider {
-    margin-top: -2.6rem;
+    margin-top: -2.1rem;
   }
 }
 .customer-slider .swiper-slide {
@@ -1904,6 +1913,11 @@ body.overflow-none {
   margin-bottom: 16rem;
 }
 @media only screen and (max-width: 991px) {
+  .share-block {
+    margin-bottom: 12rem;
+  }
+}
+@media only screen and (max-width: 991px) {
   .share-block__title {
     font-size: 1.6rem;
     line-height: 2.1rem;
@@ -1945,10 +1959,21 @@ body.overflow-none {
   margin: 1.5rem 0;
   font-weight: bold;
 }
+@media only screen and (max-width: 991px) {
+  .product-item .btn {
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+  }
+}
 
 .footer {
   padding-top: 8rem;
   margin-top: auto;
+}
+@media only screen and (max-width: 991px) {
+  .footer {
+    padding-top: 6rem;
+  }
 }
 .footer p {
   margin-bottom: 1.5rem;
@@ -1961,7 +1986,7 @@ body.overflow-none {
 }
 @media only screen and (max-width: 1199px) {
   .footer__col {
-    margin: 0 0 3rem;
+    margin: 0 0 4rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -1979,11 +2004,31 @@ body.overflow-none {
     margin: 0 3rem 0 0;
   }
 }
+@media only screen and (max-width: 991px) {
+  .footer__logo {
+    width: 21rem;
+  }
+}
 .footer-nav {
   letter-spacing: 0;
 }
 .footer-nav__item:not(:last-child) {
   margin-right: 8.4rem;
+}
+@media only screen and (max-width: 991px) {
+  .footer-nav__item:not(:last-child) {
+    margin-right: 5.4rem;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .footer__buttons {
+    margin-top: 0.1rem;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .footer__buttons .btn {
+    padding: 0.8rem 2.4rem 1rem;
+  }
 }
 .footer__buttons a:not(:first-child) {
   margin-left: 1.5rem;
@@ -2005,6 +2050,12 @@ body.overflow-none {
 @media only screen and (max-width: 1199px) {
   .footer__contacts {
     padding-bottom: 1.6rem;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .footer__contacts {
+    margin-top: 3.5rem;
+    padding-top: 4.8rem;
   }
 }
 

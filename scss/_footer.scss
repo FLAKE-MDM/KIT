@@ -2,7 +2,7 @@
     padding-top: 8rem;
     margin-top: auto;
     @include bp(md){
-
+        padding-top: 6rem;
     }
     p{
         margin-bottom: 1.5rem;
@@ -13,7 +13,7 @@
         width: 27%;
         letter-spacing: 0.015rem;
         @include bp(lg){
-            margin: 0 0 3rem;
+            margin: 0 0 4rem;
             width: 100%;
             display: flex;
             align-items: center;
@@ -28,12 +28,18 @@
         @include bp(lg){
             margin: 0 3rem 0 0;
         }
+        @include bp(md){
+            width: 21rem;
+        }
     }
     &-nav{
         letter-spacing: 0;
         &__item{
             &:not(:last-child){
                 margin-right: 8.4rem;
+                @include bp(md){
+                    margin-right: 5.4rem;
+                }
             }
         }
         &__link{
@@ -41,6 +47,14 @@
         }
     }
     &__buttons{
+        @include bp(md){
+            margin-top: 0.1rem;
+        }
+        .btn{
+            @include bp(md){
+                padding: 0.8rem 2.4rem 1rem;
+            }
+        }
         a:not(:first-child){
             margin-left: 1.5rem;
         }
@@ -60,6 +74,10 @@
         margin-top: 4.6rem;
         @include bp(lg){
             padding-bottom: 1.6rem;
+        }
+        @include bp(md){
+            margin-top: 3.5rem;
+            padding-top: 4.8rem;
         }
     }
 }
