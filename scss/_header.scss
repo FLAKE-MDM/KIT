@@ -1,0 +1,156 @@
+.header{
+    padding-top: 2rem;
+    &__logo{
+        @include bp(lg){
+            margin-bottom: 1.9rem;
+        }
+    }
+    &__container{
+        @include bp(lg){
+            flex-wrap: wrap;
+        }
+    }
+    &__slogan{
+        margin: 0 6% 0 3.5%;
+        @include bp(lg){
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-grow: 1;
+            margin-right: 0;
+            margin-bottom: 1.9rem;
+        }
+        @include bp(md){
+            margin-left: auto;
+            max-width: 72.5%;
+            padding-top: 0.4rem;
+            gap: 11%;
+        }
+        p{
+            margin-bottom: 0.6rem;
+        }
+    }
+    &__work-time{
+        @include bp(md){
+            margin-top: -0.4rem;
+            align-items: flex-start;
+            .icon{
+                margin: 0.1rem 0.7rem 0 0.2rem;
+            }
+        }
+    }
+    &__buttons{
+        padding-top: 0.1rem;
+        .icon{
+            margin-right: 1.5rem;
+        }
+        .btn{
+            margin-left: 1rem;
+        }
+    }
+    &__contacts{
+        text-align: right;
+        margin: 0.7rem 0 0 auto;
+        letter-spacing: 0.01rem;
+        @include bp(lg){
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        p{
+            margin-bottom: 0.4rem;
+            @include bp(lg){
+                margin-left: 2.2rem;
+            }
+        }
+    }
+}
+.logo{
+    flex-shrink: 0;
+    display: inline-block;
+    @include bp(hv){
+        &:hover{opacity: 0.7;}
+    }
+}
+.navbar{
+    margin-top: 2rem;
+    @include bp(md){
+        margin-top: 1.9rem;
+    }
+}
+.nav{
+    &__close{
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+    &-list{
+        display: flex;
+        @include bp(xl-up){
+            margin: 0 -5.1rem;
+        }
+        @include bp(md){
+            margin: 0 -1.6rem;
+        }
+        &__item{
+            flex-grow: 1;
+            @include bp(lg){
+
+            }
+            @include bp(md){
+
+            }
+        }
+        &__link{
+            font-weight: bold;
+            display: flex;
+            color: #fff;
+            padding: 1.1rem 0;
+            white-space: nowrap;
+            flex-grow: 1;
+            justify-content: center;
+            &.active, &:hover{
+                color: #fff;
+                background: #3F432D;
+            }
+            @include bp(md){
+               font-size: 1.6rem;
+               line-height: 2.1rem;
+               padding-bottom: 1.3rem;
+            }
+        }
+    }
+}
+.btn-menu{
+    display: block;
+    border: none;
+    align-self: center;
+    background: none;
+    flex-shrink: 0;
+    &__item{
+        display: block;
+        width: 2rem;
+        height: 0.2rem;
+        border-top-style: 5px;
+        background: #fff;
+        transition: all 0.3s ease-out;
+    }
+    &__item+&__item{
+        margin-top: 0.5rem;
+    }
+    &:hover{
+        .btn-menu__item{
+
+        }
+    }
+}
+.social-list{
+    &__item{
+        margin-left: 1.2rem;
+        width: 3.1rem;
+        height: 3rem;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+}

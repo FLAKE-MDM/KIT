@@ -1,0 +1,13 @@
+// product
+.product{
+  &-item{
+    @include bp(lg-up){
+      margin-bottom: 1.9rem;
+    }
+    &__title{
+      display: inline-block;
+      margin: 1.5rem 0;
+      font-weight: bold;
+    }
+  }
+}

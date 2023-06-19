@@ -1,0 +1,78 @@
+.footer{
+    padding-top: 8rem;
+    margin-top: auto;
+    @include bp(md){
+
+    }
+    p{
+        margin-bottom: 1.5rem;
+    }
+    &__col{
+        flex-shrink: 0;
+        margin-right: 7.3%;
+        width: 27%;
+        letter-spacing: 0.015rem;
+        @include bp(lg){
+            margin: 0 0 3rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        &-lg{
+            flex-grow: 1;
+            padding-top: 0.3rem;
+        }
+    }
+    &__logo{
+        margin-bottom: 5.8rem;
+        @include bp(lg){
+            margin: 0 3rem 0 0;
+        }
+    }
+    &-nav{
+        letter-spacing: 0;
+        &__item{
+            &:not(:last-child){
+                margin-right: 8.4rem;
+            }
+        }
+        &__link{
+
+        }
+    }
+    &__buttons{
+        a:not(:first-child){
+            margin-left: 1.5rem;
+        }
+    }
+    &__region{
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 4.5rem 0 3.2rem;
+        margin: 3.3rem 0 4.5rem;
+        letter-spacing: 0.01rem;
+    }
+    &__address{
+        font-style: normal;
+    }
+    &__contacts{
+        padding: 4.5rem 0 3.6rem;
+        margin-top: 4.6rem;
+        @include bp(lg){
+            padding-bottom: 1.6rem;
+        }
+    }
+}
+.copyright{
+    margin-right: 7.5%;
+    @include bp(lg){
+        display: flex;
+        justify-content: space-between;
+        margin: 3rem 0 0;
+    }
+}
+.contact-item{
+    &:not(:last-child){
+        margin-right: 6.4rem;
+    }
+}

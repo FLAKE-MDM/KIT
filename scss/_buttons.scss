@@ -1,0 +1,61 @@
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1.8rem;
+    line-height: 2.34rem;
+    padding: 0.8rem 1.435rem 1rem;
+    font-weight: 700;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    position: relative;
+    color: #fff;
+    background: $danger;
+    border: 2px solid $danger;
+    border-radius: 30px;
+    &:disabled, &.disabled{
+        cursor: default;
+        pointer-events: none;
+        background: gray;
+        color: gray;
+    }
+    @include bp(hv){
+        &:hover{
+            border-color: $danger-active;
+            background: $danger-active;
+            color: #fff;
+        }
+    }
+    @include bp(md){
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+    }
+    &_outline{
+        background: transparent;
+        color: $danger;
+        @include bp(hv){
+            &:hover{
+                background: transparent;
+                color: $danger-active;
+            }
+        }
+    }
+    &_size{
+        &-xs{
+
+        }
+        &-sm{
+            padding: 0.8rem 1.835rem 1rem;
+            @include bp(md){
+                padding: 0.9rem 1.2rem 1.1rem;
+            }
+        }
+        &-md{
+            padding: 0.8rem 3.26rem 1rem;
+        }
+    }
+}
+
+

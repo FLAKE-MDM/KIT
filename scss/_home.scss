@@ -1,0 +1,328 @@
+// presentation
+.presentation {
+  background: url(../img/presentation-bg.jpg) 50% 100% no-repeat;
+  background-size: cover;
+  padding: 4.6rem 0 4.1rem;
+  @include bp(md){
+    padding: 3.7rem 0 4.8rem;
+    background-position: 67.5% 100%;
+  }
+  &__title{
+    margin-bottom: 0.6rem;
+    @include bp(md){
+      margin-bottom: 1.2rem;
+    }
+  }
+  &__subtitle{
+    @include bp(md){
+      align-items: flex-start;
+      padding-right: 10%;
+      .icon{
+        margin-top: 1rem;
+      }
+    }
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: 30.5% 33.5% 30%;
+    align-items: start;
+    grid-gap: 0 2.4rem;
+    grid-auto-flow: column;
+    grid-auto-rows: auto;
+    @include bp(lg){
+      grid-gap: 1.5rem 2.4rem;
+    }
+    @include bp(md){
+      grid-template-columns: 52.1% 48%;
+      grid-auto-flow: initial;
+      grid-gap: 1.5rem 0;
+    }
+  }
+  &__text {
+    grid-column: span 2;
+    order: -1;
+    letter-spacing: -0.02rem;
+    margin-bottom: 1rem;
+    @include bp(md){
+      grid-column: span 1;
+    }
+  }
+  &__col {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row: span 5;
+    order: -1;
+    margin: 3.3rem 0.4rem;
+    @include bp(md){
+      grid-column-start: 2;
+      grid-row-start: 1;
+      grid-row: span 4;
+      margin: 0.3rem 13.6% 0 13.3%;
+    }
+  }
+  &__image{
+    display: inline-flex;
+    position: relative;
+  }
+  &__img {
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
+    border-radius: 35px;
+  }
+  &__top {
+    border-radius: 25px;
+    position: absolute;
+    top: 4.4rem;
+    left: -4.4rem;
+    @include bp(lg){
+      left: -2.5rem;
+    }
+    @include bp(md){
+      left: -3.2rem;
+      top: 3.2rem;
+      width: 14.8rem;
+    }
+  }
+  &__bottom {
+    border-radius: 25px;
+    position: absolute;
+    bottom: 3.8rem;
+    right: -4.4rem;
+    @include bp(lg){
+      right: -2.5rem;
+    }
+    @include bp(md){
+      right: -3.4rem;
+      width: 14.3rem;
+      bottom: 2.8rem;
+    }
+  }
+}
+.advantages-item {
+  position: relative;
+  padding-left: 1.8rem;
+  @include bp(xl-up){
+    margin-top: -0.7rem;
+  }
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.6rem;
+    width: 0.3rem;
+    border-radius: 5px;
+    background: $danger;
+    left: 0;
+  }
+  &__title {
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+    color: $danger;
+    margin-bottom: 1rem;
+  }
+  p{
+    margin-bottom: 0;
+  }
+}
+
+// slogan
+.slogan{
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  margin: 10.6rem 0 10.7rem;
+  @include bp(md){
+    margin: 8rem 0;
+  }
+  &__title{
+    position: absolute;
+    border-radius: 20px;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    overflow: hidden;
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #6F2E2A;
+      mix-blend-mode: color;
+    }
+    .title{
+      position: relative;
+      font-size: 5.6rem;
+      line-height: 6.7rem;
+      padding: 4rem 4rem 2.9rem;
+      text-transform: uppercase;
+      @include bp(lg){
+        font-size: 4.5rem;
+        line-height: 5.5rem;
+      }
+      @include bp(md){
+        font-size: 3.2rem;
+        line-height: 3.8rem;
+        padding: 3.5rem 1.7rem 3rem 2rem;
+      }
+    }
+  }
+  &__logo{
+    width: 14.6rem;
+    position: absolute;
+    bottom: 4.3rem;
+    right: 4rem;
+    @include bp(md){
+      bottom: 3.8rem;
+      right: 2rem;
+    }
+  }
+}
+
+// products-home
+.products-home{
+  padding: 1.6rem 0 12.61rem;
+  @include bp(md){
+    padding-bottom: 6.7rem;
+  }
+}
+.services-section{
+  @include bp(md){
+    margin-top: 6.1rem;
+  }
+}
+
+// customers
+.slider-wrap{
+  position: relative;
+}
+.customer{
+  &-prev, &-next{
+    top: auto;
+    bottom: 7.6rem;
+    @include bp(xl){
+      bottom: auto;
+      top: -6.8rem;
+    }
+  }
+  &-prev{
+    left: -0.2rem;
+    @include bp(xxl-up){
+      left: -6.4rem;
+    }
+  }
+  &-next{
+    right: -0.2rem;
+    @include bp(xxl-up){
+      right: -6.4rem;
+    }
+  }
+  &-slider{
+    padding: 2rem 1.7rem;
+    margin: -2.3rem -1.7rem 0;
+    @include bp(md){
+      margin-top: -2.6rem;
+    }
+    .swiper-slide{
+      height: auto;
+      display: flex;
+    }
+  }
+  &-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.9rem 2.1rem 2.8rem;
+    flex-grow: 1;
+    @include bp(md){
+      padding: 2.3rem 2.1rem;
+      max-height: 11rem;
+      img{
+        max-height: 100%;
+      }
+    }
+  }
+}
+
+// projects
+.project{
+  &-slider{
+    margin: -2rem -2rem 0;
+    padding: 1.8rem 2rem 2rem;
+  }
+  &-item{
+    @include bp(md){
+      img{
+        min-height: 30rem;
+        object-fit: cover;
+      }
+    }
+    &__title{
+      display: block;
+      font-weight: bold;
+      padding: 2rem 2rem 2.5rem;
+      @include bp(md){
+        font-size: 1.8rem;
+        line-height: 2.3rem;
+        padding: 1rem 2rem 1.5rem;
+        min-height: 9.7rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// text-section
+.text-section{
+  padding: 8.2rem 0 7rem;
+  border-top: 1px solid #EDEDED;
+  border-bottom: 1px solid #EDEDED;
+  margin: 9.6rem 0 10rem;
+  letter-spacing: 0.015rem;
+  @include bp(md){
+    margin: 5.9rem 0 6rem;
+    padding: 8.1rem 0 6.3rem;
+    p{margin-bottom: 2.1rem;}
+  }
+}
+
+// share-block
+.share{
+  &-block{
+    border-radius: 20px;
+    padding: 1.5rem 3rem;
+    margin-bottom: 16rem;
+    &__title{
+      @include bp(md){
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+      }
+    }
+  }
+  &-list{
+    margin: 0 -0.75rem 0 1.4rem;
+    @include bp(md){
+      margin-left: 2.8rem;
+    }
+    &__item{
+      margin: 0 0.75rem;
+    }
+    &__link{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.5rem;
+      height: 3.5rem;
+      background: #7A0700;
+      border-radius: 50%;
+      @include bp(hv){
+        &:hover{
+          background: $danger-active;
+        }
+      }
+    }
+  }
+}
