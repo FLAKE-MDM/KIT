@@ -1,21 +1,43 @@
 .form{
     &-group{
-
+        margin-bottom: 2.2rem;
+        @include bp(sm){
+            margin-bottom: 1.5rem;
+        }
+        &_check{
+            margin-bottom: 2.9rem;
+            @include bp(sm){
+                font-size: 1.2rem;
+                line-height: 1.56rem;
+                padding: 0.3rem 0 0 18%;
+                margin-bottom: 2.1rem;
+            }
+        }
+    }
+    &-label{
+        margin: 0 1.5rem 0.7rem;
+        display: block;
+        font-weight: 600;
+    }
+    &__row{
+        grid-gap: 0 2rem;
     }
     &-control{
+        font-variant-numeric: lining-nums;
         font-family: inherit;
         display: block;
-        border: 1px solid #CBCBCB;
-        border-radius: 5px;
-        padding: 1.3rem 1.9rem;
+        border: 1px solid #B9B9B9;
+        border-radius: 10px;
+        padding: 1.3rem 1.4rem 1.1rem;
         width: 100%;
         font-size: 1.4rem;
-        line-height: 2rem;
+        line-height: 1.8rem;
         font-weight: 400;
         background: transparent;
         transition: all 0.3s ease-out;
         &.has-error{
             border-color: $danger;
+            color: $danger;
             &::-webkit-input-placeholder{color:$danger!important}
             &::-moz-placeholder{color:$danger!important}
             &:-moz-placeholder{color:$danger!important}
@@ -26,41 +48,22 @@
             border-color: #E8E8E8;
 
         }
-        &:focus{
-
-        }
-        &_date{
-            background: url(../img/icons/calendar.svg) 94% 50% no-repeat;
-            background-size: 15px 16px;
-            @include bp(sm){
-                background-position: 94% 50%;
-            }
-        }
-        &_xs{
-            text-align: center;
-            width: 4.4rem;
-            padding: 1.3rem 1rem;
-            @include bp(sm){
-                width: 4.6rem;
-            }
-        }
-        &_lg{
-            padding: 2.3rem 2.4rem;
-            font-size: 1.6rem;
-            @include bp(sm){
-                padding: 2.2rem 2.3rem;
-            }
+        &_flag{
+            padding-left: 4.5rem;
+            background-image: url(../img/icons/flag.svg);
+            background-size: 2.2rem 1.6rem;
+            background-position: 1.4rem 50%;
+            background-repeat: no-repeat;
         }
     }
     &-check-input{
         flex-shrink: 0;
-        width: 2.4rem;
-        height: 2.4rem;
+        width: 1.5rem;
+        height: 1.5rem;
         display: inline-block;
-        vertical-align: -0.3rem;
-        border-radius: 5px;
-        margin-right: 1.6rem;
-        border: 1px solid #CBCBCB;
+        border-radius: 3px;
+        margin: 0.2rem 0.7rem 0 0;
+        border: 1px solid #B9B9B9;
         background: #fff;
         cursor: pointer;
         transition: all 0.3s ease-out;
@@ -68,12 +71,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        &:hover{
-            border-color: #000;
+        @include bp(hv){
+            &:hover{
+                border-color: #000;
+            }
+        }
+        @include bp(sm){
+            margin: 0 1.1rem 0 0;
         }
         &:checked{
-            background: #000;
-            border-color: #000;
+            background: $primary;
+            border-color: $primary;
             &:before{
                 opacity: 1;
             }
@@ -81,11 +89,15 @@
         &:before{
             content: '';
             display: block;
-            width: 1.2rem;
-            height: 0.9rem;
-            background: url(../img/icons/checkbox-inversion.svg) 0 0 no-repeat;
+            width: 1rem;
+            height: 0.5rem;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            transition: all 0.3s ease-out;
+            transform: rotate(-48deg);
             transition: all 0.3s ease-out;
             opacity: 0;
+            margin-top: -0.2rem;
         }
         &_sm{
             border-radius: 0;
@@ -112,131 +124,7 @@
 
         }
         &:checked{
-
             border-width: 8px;
         }
-    }
-}
-
-
-// rating
-.rating{
-    width: 8.8rem;
-    height: 1.5rem;
-    position: relative;
-    background: url(../img/icons/rating.svg) 0 0 no-repeat;
-    background-size: auto 100%;
-    margin-right: 1.2rem;
-    &__active{
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        background: url(../img/icons/rating-active.svg) 0 0 no-repeat;
-        background-size: auto 100%;
-    }
-    &_lg{
-        width: 14.6rem;
-        height: 2.5rem;
-        @include bp(md){
-            width: 9.3rem;
-            height: 1.6rem;
-        }
-    }
-}
-
-// number
-.input-number {
-    display: flex;
-    align-items: center;
-    &__input {
-        text-align: center;
-        width: 100%;
-        border: none;
-        font-size: 1.6rem;
-        font-weight: 500;
-        line-height: 2.3rem;
-        background: transparent;
-        width: 4.8rem;
-    }
-    &__plus, &__minus{
-        position: relative;
-        width: 3.2rem;
-        height: 3.2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        z-index: 2;
-        cursor: pointer;
-        transition: all 0.3s ease-out;
-        flex-shrink: 0;
-        border: 1px solid rgba(#191919, 0.1);
-        &:before, &:after{
-            content: '';
-            display: block;
-            position: absolute;
-            width: 1.4rem;
-            height: 0.2rem;
-            transition: all 0.3s ease-out;
-            border-radius: 3px;
-        }
-        &:after{
-            transform: rotate(90deg);
-        }
-        &:hover{
-
-            &:before, &:after{
-
-            }
-        }
-    }
-    &__minus {
-        &:after{
-            display: none;
-        }
-        &:before{
-            width: 1.2rem;
-        }
-    }
-}
-
-// fake-select
-.fake-select{
-    position: relative;
-    &__info{
-        display: inline-block;
-        margin-left: 1.2rem;
-    }
-    &__item{
-        display: block;
-        font-size: 1.4rem;
-        line-height: 2rem;
-        &:not(:last-child){
-            margin-bottom: 2rem;
-        }
-        &:hover, &.fake-select__item_active{
-
-        }
-    }
-    &__link{
-        white-space: nowrap;
-        &.show{
-        }
-        &.active{
-
-        }
-        &::after, &::before{
-            @include bp(md-up){
-                right: 1.9rem;
-            }
-        }
-    }
-    &__dropdown{
-        padding: 2rem;
-        margin-top: 0.4rem;
-        background: #FFFFFF;
-        box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.05);
-        border-radius: 5px;
     }
 }

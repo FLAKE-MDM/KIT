@@ -4,6 +4,9 @@
     @include bp(md){
         padding-top: 6rem;
     }
+    @include bp(sm){
+      padding-top: 3.6rem;
+    }
     p{
         margin-bottom: 1.5rem;
     }
@@ -18,6 +21,15 @@
             display: flex;
             align-items: center;
         }
+        @include bp(sm){
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 4.5rem;
+            .text_size-md{
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+            }
+        }
         &-lg{
             flex-grow: 1;
             padding-top: 0.3rem;
@@ -31,28 +43,45 @@
         @include bp(md){
             width: 21rem;
         }
+        @include bp(sm){
+            margin: 0 0 3.4rem;
+        }
     }
     &-nav{
         letter-spacing: 0;
+        @include bp(sm){
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 4.6rem;
+            font-size: 1.6rem;
+            line-height: 2.1rem;
+        }
         &__item{
             &:not(:last-child){
                 margin-right: 8.4rem;
                 @include bp(md){
                     margin-right: 5.4rem;
                 }
+                @include bp(sm){
+                    margin: 0 0 3.4rem;
+                }
             }
-        }
-        &__link{
-
         }
     }
     &__buttons{
         @include bp(md){
             margin-top: 0.1rem;
         }
+        @include bp(sm){
+            justify-content: center;
+        }
         .btn{
             @include bp(md){
                 padding: 0.8rem 2.4rem 1rem;
+            }
+            @include bp(xxs){
+                margin-right: 0.5rem;
+                width: 100%;
             }
         }
         a:not(:first-child){
@@ -65,9 +94,17 @@
         padding: 4.5rem 0 3.2rem;
         margin: 3.3rem 0 4.5rem;
         letter-spacing: 0.01rem;
+        @include bp(sm){
+            padding: 3rem 0 1.5rem;
+            margin: 3.4rem 0 3rem;
+            letter-spacing: 0;
+        }
     }
     &__address{
         font-style: normal;
+        @include bp(sm){
+            margin-bottom: 2.4rem;
+        }
     }
     &__contacts{
         padding: 4.5rem 0 3.6rem;
@@ -79,6 +116,11 @@
             margin-top: 3.5rem;
             padding-top: 4.8rem;
         }
+        @include bp(sm){
+            margin-top: 3.4rem;
+            padding-top: 3.3rem;
+            text-align: center;
+        }
     }
 }
 .copyright{
@@ -88,9 +130,28 @@
         justify-content: space-between;
         margin: 3rem 0 0;
     }
+    @include bp(sm){
+        display: block;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        margin-top: 5.2rem;
+        p{
+            margin-bottom: 1rem;
+        }
+    }
 }
 .contact-item{
     &:not(:last-child){
         margin-right: 6.4rem;
+        @include bp(sm){
+            margin-right: 0;
+        }
+    }
+    @include bp(sm){
+        margin: 0 0 3.4rem;
+        .d-flex{
+            justify-content: center;
+        }
+        p{margin-bottom: 1rem;}
     }
 }

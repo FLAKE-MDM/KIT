@@ -7,10 +7,62 @@
     padding: 3.7rem 0 4.8rem;
     background-position: 67.5% 100%;
   }
+  @include bp(sm){
+    padding: 3rem 0;
+    height: 48.1rem;
+    overflow: hidden;
+    position: relative;
+    background-size: auto 92rem;
+    background-position: 52% 100%;
+    &.show{
+      height: auto;
+      &:after{
+        height: 5rem;
+      }
+    }
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 28.1rem;
+      background: linear-gradient(to top, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  &__link{
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.8rem;
+    line-height: 2.34rem;
+    font-weight: bold;
+    .show &:after{
+      transform: rotate(180deg);
+    }
+    &:after{
+      content: '';
+      display: block;
+      background: url(../img/icons/caret-danger.svg) 0 0 no-repeat;
+      background-size: contain;
+      width: 1.9rem;
+      height: 1.2rem;
+      margin: 0.2rem -0.2rem 0 1rem;
+      transition: all 0.3s ease-out;
+    }
+  }
   &__title{
     margin-bottom: 0.6rem;
     @include bp(md){
       margin-bottom: 1.2rem;
+    }
+    @include bp(sm){
+      margin-bottom: 1rem;
     }
   }
   &__subtitle{
@@ -20,6 +72,10 @@
       .icon{
         margin-top: 0.4rem;
       }
+    }
+    @include bp(sm){
+      width: 22.3rem;
+      margin: 0 auto 2.3rem;
     }
   }
   &__container {
@@ -36,6 +92,9 @@
       grid-template-columns: 52.1% 48%;
       grid-auto-flow: initial;
       grid-gap: 1.5rem 0;
+    }
+    @include bp(sm){
+      display: block;
     }
   }
   &__text {
@@ -58,6 +117,9 @@
       grid-row-start: 1;
       grid-row: span 4;
       margin: 0.3rem 13.6% 0 13.3%;
+    }
+    @include bp(sm){
+      margin: 0 10% 2rem;
     }
   }
   &__image{
@@ -103,6 +165,12 @@
   @include bp(xl-up){
     margin-top: -0.7rem;
   }
+  @include bp(sm){
+    padding-left: 1.3rem;
+    margin-bottom: 1.9rem;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+  }
   &:before{
     content: '';
     display: block;
@@ -116,9 +184,11 @@
   }
   &__title {
     font-weight: bold;
-    margin-bottom: 0.7rem;
     color: $danger;
     margin-bottom: 1rem;
+    @include bp(sm){
+      margin-bottom: 0.6rem;
+    }
   }
   p{
     margin-bottom: 0;
@@ -134,6 +204,10 @@
   @include bp(md){
     margin: 8rem 0;
   }
+  @include bp(sm){
+    margin: 6.3rem 0 4rem;
+    border-radius: 15px;
+  }
   &__title{
     position: absolute;
     border-radius: 20px;
@@ -141,6 +215,12 @@
     left: 0;
     color: #fff;
     overflow: hidden;
+    @include bp(sm){
+      border-radius: 15px;
+      bottom: auto;
+      top: 0;
+      right: 0;
+    }
     &:before{
       content: '';
       display: block;
@@ -167,6 +247,11 @@
         line-height: 3.8rem;
         padding: 3.5rem 1.7rem 3rem 2rem;
       }
+      @include bp(sm){
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+        padding: 1.8rem 2rem 1.6rem;
+      }
     }
   }
   &__logo{
@@ -178,6 +263,17 @@
       bottom: 3.8rem;
       right: 2rem;
     }
+    @include bp(sm){
+      width: 11.6rem;
+      right: auto;
+      left: 2rem;
+      bottom: 2rem;
+    }
+  }
+  &__image{
+    @include bp(sm){
+      height: 37.4rem;
+    }
   }
 }
 
@@ -187,15 +283,24 @@
   @include bp(md){
     padding-bottom: 7.8rem;
   }
+  @include bp(sm){
+    padding: 0.5rem 0 3.5rem;
+  }
   .heading{
     @include bp(md){
       padding: 2.4rem 0;
+    }
+    @include bp(sm){
+      padding: 1.5rem 0;
     }
   }
 }
 .services-section{
   @include bp(md){
     margin-top: 5.7rem;
+  }
+  @include bp(sm){
+    margin-top: 4rem;
   }
 }
 
@@ -211,11 +316,17 @@
       bottom: auto;
       top: -6.8rem;
     }
+    @include bp(sm){
+      top: 46%;
+    }
   }
   &-prev{
     left: -0.2rem;
     @include bp(xxl-up){
       left: -6.4rem;
+    }
+    @include bp(sm){
+      left: 0.2rem;
     }
   }
   &-next{
@@ -223,12 +334,18 @@
     @include bp(xxl-up){
       right: -6.4rem;
     }
+    @include bp(sm){
+      right: 0.2rem;
+    }
   }
   &-slider{
     padding: 2rem 1.7rem;
     margin: -2.3rem -1.7rem 0;
     @include bp(md){
       margin-top: -2.1rem;
+    }
+    @include bp(sm){
+      margin: -1.3rem 8.8% 0;
     }
     .swiper-slide{
       height: auto;
@@ -248,14 +365,28 @@
         max-height: 100%;
       }
     }
+    @include bp(sm){
+      min-height: 13.5rem;
+      max-height: none;
+    }
   }
 }
 
 // projects
 .project{
+  &__title{
+    @include bp(sm){
+      margin-bottom: 0.9rem;
+    }
+  }
   &-slider{
     margin: -2rem -2rem 0;
     padding: 1.8rem 2rem 2rem;
+    @include bp(sm){
+      margin-right: -1rem;
+      padding-right: 10%;
+      padding-top: 1.9rem;
+    }
   }
   &-item{
     @include bp(md){
@@ -276,6 +407,12 @@
         display: flex;
         align-items: center;
       }
+      @include bp(sm){
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+        padding: 1.1rem 1.5rem 1.7rem;
+        min-height: 0;
+      }
     }
   }
 }
@@ -292,6 +429,10 @@
     padding: 8.1rem 0 6.3rem;
     p{margin-bottom: 2.1rem;}
   }
+  @include bp(sm){
+    margin: 2.8rem 0 4rem;
+    padding: 4.1rem 0 2.1rem;
+  }
 }
 
 // share-block
@@ -303,10 +444,17 @@
     @include bp(md){
       margin-bottom: 12rem;
     }
+    @include bp(sm){
+      width: 35.5rem;
+      margin-bottom: 8rem;
+    }
     &__title{
       @include bp(md){
         font-size: 1.6rem;
         line-height: 2.1rem;
+      }
+      @include bp(sm){
+        margin: 0.1rem 0 1.5rem;
       }
     }
   }
@@ -314,6 +462,9 @@
     margin: 0 -0.75rem 0 1.4rem;
     @include bp(md){
       margin-left: 2.8rem;
+    }
+    @include bp(sm){
+      margin: 0 -0.9rem 0.4rem;
     }
     &__item{
       margin: 0 0.75rem;
@@ -330,6 +481,10 @@
         &:hover{
           background: $danger-active;
         }
+      }
+      @include bp(sm){
+        width: 3rem;
+        height: 3rem;
       }
     }
   }

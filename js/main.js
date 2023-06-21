@@ -1,3 +1,43 @@
+$('.btn-menu').click(function(){
+  $(this).toggleClass('active');
+  $('.navbar').toggleClass('show');
+  $('body').toggleClass('overflow-none');
+});
+
+$('.dropdown-toggle').click(function(e){
+  e.preventDefault();
+  $(this).parents('.dropdown').find('.dropdown-menu').toggleClass('show');
+});
+
+// modal
+$(".modal-open").click(function(e){
+  e.preventDefault();
+  $(".modal").removeClass("show");
+  $(this.getAttribute("href")).addClass("show");
+  $('body').removeClass('overflow-none');
+  $('body').addClass('overflow-none');
+})
+$(".modal").mousedown(function(e){
+  let closeLinks = document.querySelectorAll(".modal-close");
+  let modalsGroup = document.querySelectorAll(".modal");
+
+  for(let elem of closeLinks){
+    if(e.target == elem){
+      $(this).removeClass("show");
+      $('body').removeClass('modal-open');
+      $('.login__mobile-link').removeClass('active');
+    }
+  }
+  for(let elem of modalsGroup){
+    if(e.target == elem){
+      $(this).removeClass("show");
+      $('body').removeClass('modal-open');
+      $('.login__mobile-link').removeClass('active');
+    }
+  }
+})
+
+
 // // home
 new Swiper(".customer-slider", {
   slidesPerView: 1,
@@ -24,6 +64,12 @@ if(window.innerWidth < 768){
     loop: true,
   });
 }
+
+$('.presentation__link').click(function(e){
+  e.preventDefault();
+  $('.presentation').toggleClass('show');
+  $(this).text() === 'Показать еще ' ? $(this).text('Скрыть') :  $(this).text('Показать еще ');
+});
 
 
 

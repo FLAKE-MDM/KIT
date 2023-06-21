@@ -21,124 +21,134 @@
 .fade {
   transition: opacity .15s linear;
 }
+
+// modal
 .modal{
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1055;
-  display: none;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  z-index: -1;
+  display: flex;
+  &.show{
+    opacity: 1;
+    z-index: 1055;
+  }
   &__close{
     position: absolute;
-    top: 2.4rem;
+    top: 3rem;
     right: 2.4rem;
     border: none;
-    transition: all 0.3s ease-out;
     background: none;
-    &:hover{opacity: 0.5;}
-    @include bp(sm){
-      &.icon-close{
-        width: 1.6rem;
-        height: 1.6rem;
-        background-image: url(../img/icons/close-black.svg);
-        top: 1.6rem;
-        right: 2.3rem;
+    border-radius: 50%;
+    transition: all 0.3s ease-out;
+    @include bp(hv){
+      &:hover{
+        opacity: 0.7;
       }
+    }
+    @include bp(sm){
+      right: 1.6rem;
+      top: 1.3rem;
+    }
+  }
+  &__title{
+    margin-bottom: 1rem;
+    font-size: 2.4rem;
+    line-height: 3.12rem;
+    @include bp(sm){
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      margin-bottom: 0.4rem;
+    }
+  }
+  &__header{
+    margin-bottom: 3.3rem;
+    @include bp(sm){
+      margin-bottom: 0;
+      p{
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+  &__content{
+    flex-grow: 1;
+    pointer-events: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 3.2rem 5rem 3.8rem;
+    @include bp(sm){
+      padding: 2.2rem 1.5rem 2.5rem;
     }
   }
 }
 .modal-dialog {
   position: relative;
-  pointer-events: none;
+  pointer-events: auto;
+  width: 35.5rem;
+  max-width: 100%;
+  margin: 5rem auto;
   @include bp(md-up){
-    width: 57.6rem;
-    margin: 5rem auto;
-  }
-  @include bp(lg-up){
-    width: 82rem;
-    margin: 10rem auto;
+    width: 57rem;
   }
 }
-.modal.fade .modal-dialog {
+.modal .modal-dialog {
   transition: transform .3s ease-out;
   transform: translate(0,-50px);
 }
 .modal.show .modal-dialog {
   transform: none;
 }
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1050;
-  width: 100vw;
-  height: 100vh;
-  background: #000;
-}
-.modal-backdrop.fade {
-  opacity: 0;
-}
-.modal-backdrop.show {
-  opacity: 0.3;
-}
-.modal-content{
-  flex-grow: 1;
-  pointer-events: auto;
-  background: #fff;
-  padding: 2rem;
-  @include bp(md){
-
-  }
-  @include bp(sm){
-
-  }
-}
-
 
 // dropdown
 .dropdown{
-  position: relative;
+  @include bp(lg-up){
+    position: relative;
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 2rem;
+  }
 }
 .dropdown-menu{
   position: absolute;
-  z-index: 1000;
+  z-index: 95;
   display: none;
-  min-width: 100%;
-  margin: 0.8rem 0 0;
+  width: 56.4rem;
+  margin: 1.5rem 0 0;
+  padding: 2rem 3rem;
   background: #FFFFFF;
-  box-shadow: 0px 12px 30px rgba(45, 45, 45, 0.18);
-  border-radius: 6px;
-  &_right{
-    inset: 100% 0 auto auto!important;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  left: 0;
+  @include bp(hv){
+    .dropdown:hover>&{
+      display: block;
+    }
   }
-  &_left{
-    inset: 100% auto auto 0!important;
-  }
-  &_nav{
-    box-shadow: 0px 3px 10px rgba(45, 45, 45, 0.18);
-    min-width: 28.6rem;
-    margin: 0!important;
-    transform: none!important;
-  }
-  &__link{
-    font-size: 1.4rem;
-    line-height: 2.8rem;
+  &.show {
     display: block;
-    padding: 1.2rem 1.6rem;
-    @include bp(md){
-      padding: 1rem 2rem 1rem 3rem;
-    }
-    &.active{
-      background: #ECF3EA;
-    }
   }
-}
-.dropdown-menu.show {
-  display: block;
+  @include bp(md){
+    left: 1.6rem;
+  }
+  .grid-md-2{
+    grid-gap: 0 4.2rem;
+  }
 }
 .dropdown-toggle{
   display: flex;
@@ -158,6 +168,9 @@
     transition: all 0.3s ease-out;
     @include bp(md){
       margin-left: 0.5rem;
+    }
+    @include bp(sm){
+      margin-right: 0.2rem;
     }
   }
 }

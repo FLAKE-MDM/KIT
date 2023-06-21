@@ -47,9 +47,19 @@
             @include bp(md){
                 padding: 0.9rem 1.2rem 1.1rem;
             }
+            @include bp(sm){
+                padding: 0.8rem 1.2rem 1rem;
+            }
         }
         &-md{
             padding: 0.8rem 3.26rem 1rem;
+            @include bp(sm){
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        &-lg{
+            padding: 0.8rem 4.6rem 1rem;
         }
     }
 }
