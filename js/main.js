@@ -24,14 +24,14 @@ $(".modal").mousedown(function(e){
   for(let elem of closeLinks){
     if(e.target == elem){
       $(this).removeClass("show");
-      $('body').removeClass('modal-open');
+      $('body').removeClass('overflow-none');
       $('.login__mobile-link').removeClass('active');
     }
   }
   for(let elem of modalsGroup){
     if(e.target == elem){
       $(this).removeClass("show");
-      $('body').removeClass('modal-open');
+      $('body').removeClass('overflow-none');
       $('.login__mobile-link').removeClass('active');
     }
   }
@@ -70,6 +70,52 @@ $('.presentation__link').click(function(e){
   $('.presentation').toggleClass('show');
   $(this).text() === 'Показать еще ' ? $(this).text('Скрыть') :  $(this).text('Показать еще ');
 });
+
+// p
+let video = document.querySelector("#video-test-net");
+let videoDuration = document.querySelector(".video-block__duration");
+let playBtn = document.querySelector(".play-btn");
+
+if(video){
+  playBtn.addEventListener('click', function () {
+    $(this).toggleClass('collapse');
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+  }, false);
+
+  let $video = $("#video-test-net"),
+  mousedown = false;
+
+  $video.click(function(){
+    if (this.paused) {
+        this.play();
+        return false;
+    }
+    return true;
+  });
+
+  $video.on('mousedown', function () {
+    mousedown = true;
+  });
+
+  $(window).on('mouseup', function () {
+    mousedown = false;
+  });
+
+  $video.on('play', function () {
+    $video.attr('controls', '');
+  });
+
+  $video.on('pause', function () {
+    $(playBtn).toggleClass('collapse');
+  if (!mousedown) {
+      $video.removeAttr('controls');
+  }
+  });
+}
 
 
 

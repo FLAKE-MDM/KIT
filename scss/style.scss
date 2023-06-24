@@ -22,9 +22,6 @@ body{
         overflow: hidden;
         @include bp(xl-up){
             padding-right: 1.7rem;
-            .header{
-                margin-right: 1.7rem;
-            }
         }
     }
     @include bp(sm){
@@ -56,7 +53,15 @@ body{
         max-width: 1190px;
     }
 }
-
+.content{
+    padding: 3.4rem 0 20rem;
+    @include bp(md){
+        padding: 3rem 0 12rem;
+    }
+    @include bp(sm){
+      padding: 2rem 0 10rem;
+    }
+}
 .pos-rel{
     position: relative;
     z-index: 1;
@@ -111,6 +116,19 @@ body{
 .d-block{
     display: block;
 }
+.d-lg-block{
+    @include bp(lg-up){
+        display: block!important;
+    }
+}
+.d-xl-block{
+    @include bp(xl-up){
+        display: block!important;
+    }
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
 .d-flex{
     display: flex;
 }
@@ -121,12 +139,12 @@ body{
 }
 .d-lg-flex{
     @include bp(lg-up){
-        display: flex;
+        display: flex!important;
     }
 }
 .d-xl-flex{
     @include bp(xl-up){
-        display: flex;
+        display: flex!important;
     }
 }
 .d-md-inline-flex{
@@ -155,6 +173,11 @@ body{
 .justify-content-center{
     justify-content: center;
 }
+.justify-content-xl-between{
+    @include bp(xl-up){
+        justify-content: space-between;
+    }
+}
 .grid{
     &-2{
         display: grid;
@@ -168,6 +191,13 @@ body{
         @include bp(md-up){
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            grid-gap: 3rem;
+        }
+    }
+    &-md-3{
+        @include bp(md-up){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             grid-gap: 3rem;
         }
     }
@@ -185,8 +215,17 @@ body{
             grid-gap: 3rem;
         }
     }
-   &-xl-3{
+    &-lg-6{
+        @include bp(lg-up){
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 3rem;
+        }
+    }
+    &-xl-3{
         @include bp(xl-up){
+            display: grid;
+            grid-gap: 3rem;
             grid-template-columns: repeat(3, 1fr);
         }
     }
@@ -278,58 +317,66 @@ body{
 
 // breadcrumb
 .breadcrumb{
-    margin: 3.2rem 0 1.4rem;
-    font-size: 1.2rem;
-    line-height: 2.8rem;
+    margin: 0.6rem 0 2.5rem;
     display: flex;
     flex-wrap: wrap;
     position: relative;
     z-index: 2;
+    font-weight: bold;
+    color: $danger;
     @include bp(md){
-        font-size: 1rem;
-        line-height: 1.2rem;
-        margin: 1.7rem 0 0.5rem;
+        margin: 1.1rem 0 1.4rem;
+    }
+    @include bp(sm){
+      margin: 0.9rem 0 0.7rem;
     }
     &__item{
         margin-bottom: 1rem;
     }
     &__item+&__item{
         &:before{
-            content: '–';
-            color: #000;
+            content: '';
             display: inline-block;
-            margin: 0 0.7rem;
-            @include bp(md){
-                margin: 0 0.55rem;
+            margin: 0 1.9rem -0.2rem;
+            width: 0.9rem;
+            height: 1.4rem;
+            background: url(../img/icons/breadcrumb.svg) 0 0 no-repeat;
+            background-size: contain;
+            @include bp(sm){
+                margin: 0 0.8rem -0.3rem 0.9rem;
+                background-image: url(../img/icons/breadcrumb-mobile.svg);
             }
         }
+    }
+    &__link{
+        font-weight: 400;
     }
 }
 
 // pagination
-.pagination{
-    margin: 4rem 0 6rem;
-    font-size: 1.4rem;
-    line-height: 2rem;
-    @include bp(md){
-        margin: 3.1rem 0 3.9rem;
-    }
-    &__item{
-        margin: 0 0.9rem 1rem;
-    }
-    &__link{
-        &_circle{
-            border: 1px solid #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            width: 4.4rem;
-            height: 4.4rem;
-            margin: 0 0.9rem;
-        }
-    }
-}
+// .pagination{
+//     margin: 4rem 0 6rem;
+//     font-size: 1.4rem;
+//     line-height: 2rem;
+//     @include bp(md){
+//         margin: 3.1rem 0 3.9rem;
+//     }
+//     &__item{
+//         margin: 0 0.9rem 1rem;
+//     }
+//     &__link{
+//         &_circle{
+//             border: 1px solid #000;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             border-radius: 50%;
+//             width: 4.4rem;
+//             height: 4.4rem;
+//             margin: 0 0.9rem;
+//         }
+//     }
+// }
 
 
 @import 'form';
@@ -337,6 +384,7 @@ body{
 @import 'home';
 @import 'products';
 @import 'footer';
+@import 'productions';
 
 
 
