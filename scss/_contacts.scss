@@ -1,0 +1,125 @@
+.contacts{
+  &-section{
+    margin: -0.6rem 0 5rem;
+    @include bp(md){
+      padding-top: 0.5rem;
+      margin: 0 0 6rem;
+    }
+    @include bp(sm){
+      padding-top: 1rem;
+      margin-bottom: 4.9rem;
+    }
+  }
+  &-block{
+    &__header{
+      padding: 3rem 3rem 2.9rem;
+      font-weight: 600;
+      border-bottom: 1px solid #EDEDED;
+      font-size: 2.4rem;
+      line-height: 3.12rem;
+      @include bp(sm){
+        font-size: 2rem;
+        line-height: 130%;
+        padding: 2rem 1.5rem 1.5rem;
+      }
+    }
+    &__body{
+      padding: 3.2rem 3rem 2.5rem;
+      @include bp(sm){
+        padding: 2rem 1.5rem 2.3rem;
+      }
+    }
+    &__footer{
+      @include bp(md){
+        width: 81%;
+        margin-top: 4.3rem;
+      }
+      @include bp(sm){
+        width: 100%;
+        margin-top: 2.5rem;
+      }
+      .social-list{
+        @include bp(sm){
+          margin-bottom: 2.6rem;
+        }
+      }
+    }
+    p{
+      margin-bottom: 1.1rem;
+    }
+    .btn{
+      margin-bottom: 0.3rem;
+      padding-left: 2.3rem;
+      padding-right: 2.3rem;
+    }
+  }
+  &-item{
+    margin-bottom: 1.9rem;
+    @include bp(sm){
+      margin-bottom: 1.4rem;
+    }
+    .text_bold{
+      @include bp(sm){
+        font-size: 1.6rem;
+        line-height: 130%;
+      }
+    }
+    .d-md-flex &{
+      &:not(:last-child){
+        margin-right: 4.9rem;
+      }
+    }
+    p{
+      margin-bottom: 0.4rem;
+    }
+  }
+}
+.social-list{
+  &__item{
+    margin-right: 1.5rem;
+  }
+}
+.map{
+  @include bp(md){
+    height: 57.4rem;
+    margin-top: 3rem;
+  }
+  @include bp(sm){
+    height: 29.5rem;
+  }
+  iframe{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// requisites
+.requisites{
+  &-title{
+    @include bp(sm){
+      font-size: 2rem;
+      line-height: 130%;
+    }
+  }
+  &-table{
+    margin-top: 1.1rem;
+    @include bp(md){
+      margin-bottom: 4rem;
+    }
+    @include bp(sm){
+      margin-top: 1.4rem;
+      margin-bottom: 0;
+    }
+    td:first-child{
+      width: 36.75%;
+      @include bp(md){
+        width: 39%;
+      }
+    }
+    td:not(:first-child){
+      @include bp(sm){
+        padding: 1.4rem 2rem 1.2rem 1.3rem;
+      }
+    }
+  }
+}

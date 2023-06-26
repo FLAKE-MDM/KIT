@@ -72,7 +72,7 @@ body{
 }
 .bg{
     &_danger{
-        background: $danger;
+        background: $danger!important;
     }
     &_primary{
         background: $primary;
@@ -105,6 +105,9 @@ body{
         }
     }
 }
+.d-block{
+    display: block;
+}
 .d-none{
     display: none!important;
 }
@@ -113,8 +116,15 @@ body{
         display: none!important;
     }
 }
-.d-block{
-    display: block;
+.d-md-block{
+    @include bp(md-up){
+        display: block!important;
+    }
+}
+.d-lg-none{
+    @include bp(lg-up){
+        display: none!important;
+    }
 }
 .d-lg-block{
     @include bp(lg-up){
@@ -147,9 +157,17 @@ body{
         display: flex!important;
     }
 }
+.d-inline-flex{
+    display: inline-flex;
+}
 .d-md-inline-flex{
     @include bp(md-up){
         display: inline-flex;
+    }
+}
+.d-md-inline-block{
+    @include bp(md-up){
+        display: inline-block;
     }
 }
 .order{
@@ -250,6 +268,17 @@ body{
       font-size: 1.6rem;
       line-height: 2.1rem;
     }
+    &_sm{
+        margin-top: 6.4rem;
+        padding: 1.5rem 0;
+        @include bp(md){
+            margin-top: 4.5rem;
+            padding: 1.2rem 0;
+        }
+        @include bp(sm){
+            margin-top: 3.8rem;
+        }
+    }
     &_md{
         margin-top: 7.1rem;
         @include bp(md){
@@ -263,6 +292,57 @@ body{
         margin-top: 10.7rem;
         @include bp(sm){
             margin-top: 4.7rem;
+        }
+    }
+    &_before{
+        border-bottom: none;
+        border-top: 1px solid #EDEDED;
+        margin: 1.4rem 0;
+        padding: 2.5rem 0 0.6rem;
+        @include bp(lg){
+            align-items: flex-start;
+        }
+        @include bp(md){
+            padding: 0;
+            border: none;
+            margin: 1.9rem 0 1.7rem;
+        }
+        @include bp(sm){
+            margin-bottom: 3.5rem;
+        }
+        a{
+            @include bp(md){
+                margin-top: 0.5rem;
+            }
+            @include bp(sm){
+                margin: 0;
+                .d-md-none{
+                    margin-right: 0.4rem;
+                }
+            }
+        }
+        .title_size-md{
+            @include bp(md){
+                font-size: 2.6rem;
+                line-height: 120%;
+            }
+            @include bp(sm){
+                font-size: 2.4rem;
+                margin-bottom: 0.9rem;
+            }
+        }
+        &-md{
+            margin: 2.9rem 0 0;
+            padding: 2rem 0 1.9rem;
+            @include bp(md){
+                border-top: 1px solid #EDEDED;
+                margin: 2.2rem 0 0.2rem;
+            }
+            @include bp(sm){
+                margin: 1.9rem 0 0.5rem;
+                font-size: 1.6rem;
+                line-height: 134%;
+            }
         }
     }
 }
@@ -282,21 +362,13 @@ body{
     background: #FFFFFF;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
+    @include bp(sm){
+        border-radius: 15px;
+    }
 }
 
 // swiper
 .swiper{
-    // &-pagination{
-    //     &-bullet{
-    //         width: 0.6rem;
-    //         height: 0.6rem;
-    //         margin: 0 0.4rem;
-    //         opacity: 1;
-    //         &:hover, &-active{
-
-    //         }
-    //     }
-    // }
     &-btn{
         position: absolute;
         top: 0;
@@ -319,11 +391,14 @@ body{
 .breadcrumb{
     margin: 0.6rem 0 2.5rem;
     display: flex;
-    flex-wrap: wrap;
     position: relative;
     z-index: 2;
     font-weight: bold;
     color: $danger;
+    white-space: nowrap;
+    .products__header &{
+        margin-bottom: 0;
+    }
     @include bp(md){
         margin: 1.1rem 0 1.4rem;
     }
@@ -353,31 +428,71 @@ body{
     }
 }
 
-// pagination
-// .pagination{
-//     margin: 4rem 0 6rem;
-//     font-size: 1.4rem;
-//     line-height: 2rem;
-//     @include bp(md){
-//         margin: 3.1rem 0 3.9rem;
-//     }
-//     &__item{
-//         margin: 0 0.9rem 1rem;
-//     }
-//     &__link{
-//         &_circle{
-//             border: 1px solid #000;
-//             display: flex;
-//             align-items: center;
-//             justify-content: center;
-//             border-radius: 50%;
-//             width: 4.4rem;
-//             height: 4.4rem;
-//             margin: 0 0.9rem;
-//         }
-//     }
-// }
+// table
+.table{
+    width: 100%;
+    tbody tr:nth-of-type(odd){
+        td{
+            background: #F6F6F6;
+        }
+        td:first-child{
+            border-radius: 10px 0 0 10px;
+        }
+        td:last-child{
+            border-radius: 0 10px 10px 0;
+        }
+    }
+    td{
+        padding: 1.5rem 2rem 1.45rem;
+        @include bp(md){
+            padding-bottom: 1.4rem;
+        }
+        vertical-align: top;
+        &:not(:first-child){
+            border-left: 1px solid #EDEDED;
+        }
+    }
+    th{
+        font-weight: 900;
+        font-size: 1.4rem;
+        line-height: 130%;
+        padding: 0 2rem 1.7rem;
+        text-align: left;
+        &:not(:first-child){
+            border-left: 1px solid #EDEDED;
+        }
+        @include bp(md){
+            padding-bottom: 1.1rem;
+        }
+        @include bp(sm){
+            font-size: 1.2rem;
+            padding-left: 1.5rem;
+        }
+    }
+}
 
+// dots-list
+.dots-list {
+    &__item {
+        position: relative;
+        padding-left: 1.6rem;
+        margin-bottom: 1.02rem;
+        @include bp(sm){
+            margin-bottom: 0.9rem;
+        }
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0.7rem;
+            left: 0;
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 50%;
+            background: $danger;
+        }
+    }
+  }
 
 @import 'form';
 @import 'header';
@@ -385,6 +500,9 @@ body{
 @import 'products';
 @import 'footer';
 @import 'productions';
+@import 'about';
+@import 'contacts';
+@import 'category';
 
 
 

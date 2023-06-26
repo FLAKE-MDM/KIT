@@ -60,9 +60,13 @@ h1, h2{
         &-md{
             font-size: 3.6rem;
             line-height: 4.32rem;
-            @include bp(sm){
+            @include bp(md){
                 font-size: 2.4rem;
                 line-height: 2.9rem;
+            }
+            @include bp(sm){
+                font-size: 1.8rem;
+                line-height: 120%;
             }
         }
         &-lg{
@@ -93,8 +97,18 @@ h1, h2{
     }
 }
 .mb{
-    // 19
-    // 21
+    &_sm{
+        margin-bottom: 1.9rem!important;
+        @include bp(md){
+            margin-bottom: 1rem!important;
+        }
+    }
+    &_md{
+        margin-bottom: 2.1rem;
+        @include bp(md){
+            margin-bottom: 1.5rem;
+        }
+    }
     &_lg{
         margin-bottom: 2.5rem;
         @include bp(sm){
@@ -117,9 +131,6 @@ h1, h2{
     }
     // size
     &_size{
-        &-xs{
-            
-        }
         &-sm{
             font-size: 1.4rem;
             line-height: 1.82rem;
@@ -150,9 +161,6 @@ h1, h2{
         }
     }
     // colors
-    // &_primary{
-
-    // }
     &_dark{
         color: $dark;
     }

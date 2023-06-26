@@ -3,24 +3,89 @@
   &-item{
     @include bp(lg-up){
       margin-bottom: 1.9rem;
+      .products-list &{
+        margin: 0;
+      }
+    }
+    &_md{
+      @include bp(md){
+        margin-bottom: 0.8rem;
+      }
     }
     &__title{
       display: inline-block;
       margin: 1.5rem 0;
       font-weight: bold;
+      .products-list &{
+        margin: 1.2rem 0 1.3rem;
+        @include bp(md){
+          font-size: 1.4rem;
+          line-height: 130%;
+          margin: 1rem 0 1.1rem;
+        }
+      }
       @include bp(sm){
         font-size: 1.4rem;
         line-height: 1.82rem;
         margin: 1rem 0 1.1rem;
       }
+      &-sm{
+        font-weight: bold;
+        margin: 1.1rem 0;
+        display: inline-block;
+        @include bp(sm){
+          font-size: 1.6rem;
+          line-height: 130%;
+        }
+      }
+      &-md{
+        font-weight: bold;
+        margin: 1.1rem 0 1.3rem;
+        display: inline-block;
+        @include bp(md){
+          font-size: 1.4rem;
+          line-height: 120%;
+          margin-bottom: 1.4rem;
+        }
+        @include bp(sm){
+          margin-top: 1rem;
+        }
+      }
     }
     &__image{
+      .products-list &{
+        @include bp(md){
+          height: 16.6rem;
+          img{
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        @include bp(xxs){
+          height: 13.2rem;
+        }
+      }
       @include bp(xxs){
         height: 13.2rem;
         img{
           height: 100%;
           object-fit: cover;
         }
+      }
+      &_md{
+        @include bp(md){
+          height: 18.2rem;
+          img{
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    p{
+      margin-bottom: 1rem;
+      @include bp(md){
+        margin-bottom: 0.5rem;
       }
     }
     .btn{
@@ -33,6 +98,135 @@
         line-height: 1.82rem;
         margin-bottom: 0.5rem;
       }
+      .products-list &{
+        @include bp(md){
+          font-size: 1.4rem;
+          line-height: 120%;
+          margin: 0;
+          height: 4rem;
+        }
+      }
     }
+  }
+}
+
+// products
+.products{
+  padding-top: 0.5rem;
+  display: grid;
+  grid-template-columns: 27rem 74.4%;
+  grid-gap: 0 3rem;
+  grid-template-areas:
+    "aside header"
+    "aside main";
+  @include bp(lg){
+    grid-template-columns: 21rem 73.5%;
+    grid-gap: 0 4rem;
+  }
+  @include bp(md){
+    grid-template-areas:
+    "header header"
+    "aside main";
+    padding: 0;
+    grid-template-columns: 21rem 63.7%;
+  }
+  @include bp(sm){
+    display: block;
+  }
+  &-section{
+    margin-bottom: 3.8rem;
+    @include bp(md){
+      margin-bottom: 6rem;
+    }
+    @include bp(sm){
+      margin-bottom: 4rem;
+    }
+  }
+  &-list{
+    @include bp(md){
+      grid-gap: 2rem;
+    }
+  }
+  &__header{
+    grid-area: header;
+    @include bp(md){
+      margin: 0;
+    }
+    @include bp(sm){
+      margin-bottom: 1rem;
+    }
+  }
+}
+.catalogue-link{
+  padding: 0.9rem 1.435rem 1.4rem;
+  &.active{
+    &::after{
+      transform: rotate(180deg);
+    }
+  }
+  &:after {
+    content: "";
+    display: block;
+    background: url(../img/icons/caret-inversion.svg) 0 0 no-repeat;
+    background-size: contain;
+    width: 1.5rem;
+    height: 0.9rem;
+    margin: 0.6rem -0.4rem 0 1.2rem;
+    transition: all 0.3s ease-out;
+  }
+}
+
+// aside
+.aside{
+  grid-area: aside;
+  padding-top: 0.3rem;
+  @include bp(md){
+    padding: 0;
+  }
+  &-nav{
+    padding: 2rem 1.8rem 0.4rem 2rem;
+    border-radius: 15px;
+    @include bp(md){
+      margin-top: 1.9rem;
+      border-radius: 10px;
+      padding: 2rem 1.3rem 0.2rem 1.5rem;
+    }
+    @include bp(sm){
+      display: none;
+      width: 100%;
+      margin: 0;
+      &.show{
+        display: block;
+      }
+    }
+  }
+  .sub-nav__item{
+    @include bp(md){
+      margin-bottom: 1.7rem;
+    }
+  }
+  .sub-nav__link{
+    @include bp(lg){
+      font-size: 1.5rem;
+      line-height: 130%;
+    }
+    .icon-caret-right{
+      @include bp(md){
+        margin-top: 0.3rem;
+      }
+    }
+  }
+  .sub-sub-nav__item{
+    @include bp(md){
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+// main
+.main{
+  grid-area: main;
+  @include bp(sm){
+    margin-top: 3.1rem;
   }
 }

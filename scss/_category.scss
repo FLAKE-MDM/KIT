@@ -1,0 +1,289 @@
+// category
+.category{
+  &-title{
+    line-height: 110%;
+    @include bp(md){
+      line-height: 120%;
+      margin-bottom: 0!important;
+    }
+  }
+  &-preview{
+    position: relative;
+    margin: 3.2rem 0 2.5rem;
+    @include bp(md){
+      margin: 1.9rem 0 2rem;
+    }
+    @include bp(sm){
+      margin-bottom: 1.2rem;
+    }
+    &__image{
+      border-radius: 30px;
+      @include bp(md){
+        border-radius: 20px;
+      }
+      @include bp(sm){
+        height: 19.4rem;
+        img{
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    &__title{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 2.9rem 4rem;
+      border-radius: 30px;
+      background: rgba(0, 0, 0, 0.50);
+      box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+      width: 76.7%;
+      font-size: 3.2rem;
+      line-height: 120%;
+      @include bp(md){
+        font-size: 2.4rem;
+        padding: 1.6rem 1.5rem 0.8rem;
+        width: 83%;
+        border-radius: 20px;
+      }
+      @include bp(sm){
+        font-size: 1.8rem;
+        line-height: 120%;
+        width: 80.4%;
+        padding: 1.4rem 1.5rem 1.1rem;
+      }
+    }
+  }
+  &-description{
+    display: grid;
+    grid-template-columns: 65.5% 31%;
+    grid-gap: 0 3rem;
+    margin-bottom: 5rem;
+    @include bp(md){
+      display: block;
+    }
+    @include bp(sm){
+      margin-bottom: 3.5rem;
+    }
+    &__text{
+      padding-top: 0.2rem;
+      p{
+        margin-bottom: 0;
+      }
+    }
+    &__buttons{
+      @include bp(md){
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0 2rem;
+      }
+      @include bp(sm){
+        display: block;
+        margin-top: 2.1rem;
+      }
+      .btn{
+        margin-bottom: 1rem;
+        @include bp(sm){
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+  &-production{
+    margin-top: 4.8rem;
+    @include bp(sm){
+      margin-top: 4rem;
+    }
+    .product-item{
+      margin: 0;
+    }
+    .grid-2{
+      @include bp(md){
+        grid-gap: 2rem;
+      }
+    }
+  }
+  &-customer-slider{
+    padding: 2rem 1.7rem;
+    margin: -1.6rem 2.6rem 0;
+    @include bp(md){
+      margin: -1.4rem 3.2rem 0;
+      padding: 2rem 1rem;
+    }
+    @include bp(sm){
+      margin: -0.9rem 10.5% 0;
+    }
+    .swiper-slide{
+      height: auto;
+      display: flex;
+      max-height: 12.6rem;
+      @include bp(md){
+        max-height: 8.7rem;
+      }
+      @include bp(sm){
+        height: 13.6rem;
+        max-height: none;
+      }
+    }
+    .customer-item{
+      @include bp(md){
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+      }
+      @include bp(sm){
+        border-radius: 20px;
+      }
+    }
+  }
+}
+.factory-descriprion{
+  @include bp(sm){
+    margin-right: -1rem;
+  }
+}
+.price-section{
+  margin-top: 8rem;
+  @include bp(md){
+    margin-top: 9.2rem;
+  }
+  @include bp(sm){
+    margin-top: 5.1rem;
+    p{
+      margin-bottom: 1.2rem;
+    }
+  }
+  &__table{
+    margin-top: 3.5rem;
+    @include bp(md){
+      margin-top: 2.6rem;
+    }
+    @include bp(sm){
+      margin: 0;
+    }
+    td{
+      width: 50%;
+      @include bp(md){
+        width: 25%;
+      }
+      @include bp(sm){
+        padding: 1.2rem 1.5rem;
+      }
+    }
+  }
+}
+
+// project
+.project{
+  &-section {
+    margin: 6.1rem 0 2.2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @include bp(md){
+      margin: 4rem 0 2.1rem;
+    }
+    @include bp(sm){
+      margin: 3rem 0 1.4rem;
+      position: relative;
+      padding: 6rem 0 6.8rem;
+      justify-content: flex-start;
+    }
+    &__text {
+      position: absolute;
+      padding: 2.8rem 1.5rem 1.2rem 2.5rem;
+      left: 0;
+      width: 56.6%;
+      border-radius: 30px;
+      @include bp(md){
+        width: 76.7%;
+        padding-left: 2.3rem;
+      }
+      @include bp(sm){
+        border-radius: 15px;
+        padding: 1.8rem 1.5rem 0;
+        position: relative;
+        z-index: 2;
+        width: 70%;
+      }
+      .title{
+        line-height: 110%;
+        margin-bottom: 1.3rem;
+        @include bp(lg){
+          font-size: 2.4rem;
+        }
+        @include bp(md){
+          margin-bottom: 1rem;
+        }
+        @include bp(sm){
+          font-size: 1.8rem;
+        }
+      }
+    }
+    &__image {
+      @include bp(md){
+        height: 40.2rem;
+        margin-left: 4rem;
+      }
+      @include bp(sm){
+        left: 3.5rem;
+        margin: 0;
+        right: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: auto;
+      }
+      img{
+        border-radius: 30px;
+        @include bp(md){
+          height: 100%;
+          object-fit: cover;
+          object-position: 40.5%;
+          width: 100%;
+        }
+      }
+    }
+  }
+  &-descriprion {
+    margin-bottom: 3.9rem;
+    @include bp(md){
+      margin-bottom: 2.9rem;
+    }
+    @include bp(sm){
+      margin-bottom: 2.6rem;
+    }
+    &__link {
+      align-self: flex-end;
+      margin-left: 5%;
+      @include bp(md){
+        margin: 2.1rem 0 0;
+      }
+      @include bp(sm){
+        font-size: 1.6rem;
+        margin-top: 1.8rem;
+      }
+    }
+  }
+  &-info {
+    padding: 2rem 3rem 1.4rem;
+    @include bp(md){
+      padding: 2rem 2rem 1.4rem;
+    }
+    @include bp(sm){
+      padding: 1.5rem 1.5rem 0.7rem;
+    }
+    &__title{
+      margin-bottom: 1.4rem;
+      @include bp(md){
+        font-size: 2.4rem;
+        line-height: 130%;
+      }
+      @include bp(sm){
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
