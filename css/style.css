@@ -225,7 +225,7 @@ input:hover::-webkit-inner-spin-button {
   pointer-events: auto;
   width: 35.5rem;
   max-width: 100%;
-  margin: 5rem auto;
+  margin: auto;
 }
 @media only screen and (min-width: 768px) {
   .modal-dialog {
