@@ -54,7 +54,7 @@ new Swiper(".customer-slider", {
   },
 });
 
-new Swiper(".category-customer-slider", {
+new Swiper(".product-customer-slider", {
   slidesPerView: 1,
   spaceBetween: 30,
   loop: true,
@@ -69,8 +69,8 @@ new Swiper(".category-customer-slider", {
     },
   },
   navigation: {
-    nextEl: ".category-customer-next",
-    prevEl: ".category-customer-prev",
+    nextEl: ".product-customer-next",
+    prevEl: ".product-customer-prev",
   },
 });
 
@@ -138,4 +138,9 @@ $('.catalogue-link').click(function(e){
   $('.aside-nav').toggleClass('show');
   $(this).toggleClass('active');
   $(this).text() === 'Показать каталог' ? $(this).text('Скрыть каталог') :  $(this).text('Показать каталог');
+});
+
+$('.showmore').click(function(e){
+  e.preventDefault();
+  $(this).parent().addClass('active');
 });

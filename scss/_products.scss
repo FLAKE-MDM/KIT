@@ -200,6 +200,22 @@
       }
     }
   }
+  .sub-sub-nav{
+    li:nth-child(n+3) {
+      display: none;
+    }
+    li.showmore {
+      display: block;
+    }
+    &.active{
+      li:nth-child(n+3){
+        display: block;
+      }
+      li.showmore{
+        display: none;
+      }
+    }
+  }
   .sub-nav__item{
     @include bp(md){
       margin-bottom: 1.7rem;
