@@ -1103,6 +1103,9 @@ h1, h2 {
     text-align: center;
   }
 }
+.text_right {
+  text-align: right;
+}
 
 body {
   font: 400 1.6rem/2.08rem "Raleway", sans-serif;
@@ -2873,6 +2876,23 @@ body.overflow-none {
   .products-list {
     grid-gap: 2rem;
   }
+}
+.products-list__footer {
+  grid-column: span 3;
+}
+@media only screen and (max-width: 991px) {
+  .products-list__footer {
+    grid-column: span 2;
+  }
+}
+.products-list .product-item:nth-of-type(n+7) {
+  display: none;
+}
+.products-list.active .product-item:nth-of-type(n+7) {
+  display: block;
+}
+.products-list.active .showmore {
+  display: none;
 }
 .products__header {
   grid-area: header;

@@ -146,6 +146,23 @@
     @include bp(md){
       grid-gap: 2rem;
     }
+    &__footer{
+      grid-column: span 3;
+      @include bp(md){
+        grid-column: span 2;
+      }
+    }
+    .product-item:nth-of-type(n+7){
+      display: none;
+    }
+    &.active{
+      .product-item:nth-of-type(n+7){
+        display: block;
+      }
+      .showmore{
+        display: none;
+      }
+    }
   }
   &__header{
     grid-area: header;
